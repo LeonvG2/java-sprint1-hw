@@ -18,7 +18,6 @@ public class StepTracker {
         System.out.println("Введите номер месяца");
         // ввод и проверка номера месяца
         int month;
-
         while (true) {
             System.out.println("Номер месяца (1 - 12):");
             month = scanner.nextInt();
@@ -32,7 +31,6 @@ public class StepTracker {
         System.out.println("Введите день от 1 до 30 (включительно)");
         // ввод и проверка дня
         int day;
-
         while (true) {
             day = scanner.nextInt();
             if (day >= 1 && day <= 30) {
@@ -44,11 +42,10 @@ public class StepTracker {
 
         System.out.println("Введите количество шагов");
         // ввод и проверка количества шагов
-        int step = scanner.nextInt();
-
+        int step;
         while (true) {
-            day = scanner.nextInt();
-            if (day >= 0 ) {
+            step =  scanner.nextInt();
+            if (step >= 0 ) {
                 break;
             } else {
                 System.out.println("Ошибка: количество шагов должно быть положительным.");
@@ -98,7 +95,11 @@ public class StepTracker {
         monthData.printDaysAndStepsFromMonth();
         System.out.println("Сумма шагов за месяц: " + sumSteps);
         System.out.println("Максимальное количество шагов за день: " + monthData.maxSteps());
-        System.out.println("Среднее количество шагов за день: " + (sumSteps / 30));
+
+        if (sumSteps > 0) {
+            System.out.println("Среднее количество шагов за день: " + (sumSteps / 30));
+        }
+
         System.out.println("Пройденная дистанция (в км): " + converter.convertToKM(sumSteps));
         System.out.println("Сожжённые килокалории: " + converter.convertStepsToKilocalories(sumSteps));
         System.out.println("Лучшая серия: " + monthData.bestSeries(goalByStepsPerDay));

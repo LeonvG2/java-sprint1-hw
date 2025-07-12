@@ -5,22 +5,42 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
 
+//        while (true) {
+//            printMenu();
+//            int i = scanner.nextInt();
+//
+//            if (i == 1) {
+//                stepTracker.addNewNumberStepsPerDay();
+//            } else if (i == 2) {
+//                stepTracker.changeStepGoal();
+//            } else if (i == 3) {
+//                stepTracker.printStatistic();
+//            } else if (i == 4) {
+//                System.out.println("Пока!");
+//                scanner.close();
+//                return;
+//            } else {
+//                System.out.println("Неверное значение, попробуйте еще раз.");
+//            }
         while (true) {
             printMenu();
             int i = scanner.nextInt();
-
-            if (i == 1) {
-                stepTracker.addNewNumberStepsPerDay();
-            } else if (i == 2) {
-                stepTracker.changeStepGoal();
-            } else if (i == 3) {
-                stepTracker.printStatistic();
-            } else if (i == 4) {
-                System.out.println("Пока!");
-                scanner.close();
-                return;
-            } else {
-                System.out.println("Неверное значение, попробуйте еще раз.");
+            switch (i) {
+                case 1:
+                    stepTracker.addNewNumberStepsPerDay();
+                    break;
+                case 2:
+                    stepTracker.changeStepGoal();
+                    break;
+                case 3:
+                    stepTracker.printStatistic();
+                    break;
+                case 4:
+                    System.out.println("Пока!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Неверное значение, попробуйте еще раз.");
             }
         }
     }

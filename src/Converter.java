@@ -1,13 +1,13 @@
 public class Converter {
-    int step = 75;               // длина шага в сантиметрах
-    int caloriesPerStep = 50;    // калорий на шаг (не килокалорий!)
-    int kiloCal = 1000;          // калорий в килокалории
+    final int STEP_LENGTH_CM = 75;
+    final int CALORIES_PER_STEP = 50;
+    final int KCAL_DIVISOR = 1000;        // калорий в килокалории
 
     public int convertToKM(int steps) {
-        return (steps * step) / 100000;
+        return (steps * STEP_LENGTH_CM) / 100000;
     }
 
     int convertStepsToKilocalories(int steps) {
-        return (steps * caloriesPerStep) / kiloCal;
+        return (steps * CALORIES_PER_STEP) / KCAL_DIVISOR;
     }
 }
